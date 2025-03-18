@@ -4,12 +4,13 @@
 
 Customer Service is a Spring Boot application that manages customer information. It provides RESTful APIs to perform CRUD operations on customer data.
 
-## Features
+## Contents
 
 - Create, Read, Update, and Delete (CRUD) operations for customer data
 - Dockerized application
 - Kubernetes deployment configuration
 - Actuator endpoints for health checks and metrics (Observability)
+- Steps to build CI/CD pipeline 
 
 ## Technologies Used
 
@@ -108,3 +109,11 @@ mvn spring-boot:run
 - `GET /actuator/health` - Health check
 - `GET /actuator/metrics` - Metrics
 
+## CI/CD Pipeline
+
+1. Add a buildspec.yml file to your project define the build steps.
+2. Create a CodeBuild project in AWS to run the Build.
+3. Create a CodePipeline from AWS console.
+4. Configure the source, build, and deploy stages in the CodePipeline.
+5. Trigger the pipeline to build and deploy the application.
+6. Add manual approval steps to deploy to production.
